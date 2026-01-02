@@ -46,9 +46,9 @@ internal class Constants
     public static class Headers
     {
         public const string AsrsHeaderPrefix = "X-ASRS-";
-        public const string AsrsConnectionIdHeader = AsrsHeaderPrefix + "Connection-Id";
+        public const string AsrsConnectionIdHeader = AsrsHeaderPrefix + "Connection-ID";
         public const string AsrsUserClaims = AsrsHeaderPrefix + "User-Claims";
-        public const string AsrsUserId = AsrsHeaderPrefix + "User-Id";
+        public const string AsrsUserId = AsrsHeaderPrefix + "User-ID";
         public const string AsrsHubNameHeader = AsrsHeaderPrefix + "Hub";
         public const string AsrsCategory = AsrsHeaderPrefix + "Category";
         public const string AsrsEvent = AsrsHeaderPrefix + "Event";

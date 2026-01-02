@@ -13,7 +13,7 @@ internal static class Constants
 
     public const string AsrsUserAgent = "Asrs-User-Agent";
 
-    public const string AsrsInstanceId = "Asrs-Instance-Id";
+    public const string AsrsInstanceId = "Asrs-Instance-ID";
 
     public const string AsrsIsDiagnosticClient = "Asrs-Is-Diagnostic-Client";
 
@@ -135,9 +135,9 @@ internal static class Constants
 
         public const string AsrsInternalHeaderPrefix = "X-ASRS-";
 
-        public const string AsrsServerId = AsrsInternalHeaderPrefix + "Server-Id";
+        public const string AsrsServerId = AsrsInternalHeaderPrefix + "Server-ID";
 
-        public const string AsrsMessageTracingId = AsrsInternalHeaderPrefix + "Message-Tracing-Id";
+        public const string AsrsMessageTracingId = AsrsInternalHeaderPrefix + "Message-Tracing-ID";
 
         public const string MicrosoftErrorCode = "x-ms-error-code";
     }
