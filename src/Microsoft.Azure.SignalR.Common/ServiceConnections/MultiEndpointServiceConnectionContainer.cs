@@ -341,7 +341,7 @@ internal class MultiEndpointServiceConnectionContainer : IServiceConnectionConta
             var container = _routerEndpoints.endpoints.FirstOrDefault(e => e.Endpoint == endpoint.Endpoint && e.EndpointType == endpoint.EndpointType);
             if (container == null)
             {
-                Log.EndpointNotExists(_logger, endpoint.ToString());
+                Log.NonexistentEndpoint(_logger, endpoint.ToString());
                 return;
             }
 
@@ -460,7 +460,7 @@ internal class MultiEndpointServiceConnectionContainer : IServiceConnectionConta
             LoggerMessage.Define<string>(LogLevel.Debug, new EventId(2, "StoppingConnection"), "Stopping connections for endpoint {endpoint}.");
 
         private static readonly Action<ILogger, string, Exception> EndpointNotExistsAction =
-            LoggerMessage.Define<string>(LogLevel.Error, new EventId(3, "EndpointNotExists"), "Endpoint {endpoint} from the router does not exist.");
+            LoggerMessage.Define<string>(LogLevel.Error, new EventId(3, "NonexistentEndpoint"), "Endpoint {endpoint} from the router does not exist.");
 
         private static readonly Action<ILogger, string, Exception> FailedStartingConnectionForNewEndpointAction =
             LoggerMessage.Define<string>(LogLevel.Error, new EventId(7, "FailedStartingConnectionForNewEndpoint"), "Fail to create and start server connection for new endpoint {endpoint}.");
@@ -484,7 +484,7 @@ internal class MultiEndpointServiceConnectionContainer : IServiceConnectionConta
             StoppingConnectionAction(logger, endpoint, null);
         }
 
-        public static void EndpointNotExists(ILogger logger, string endpoint)
+        public static void NonexistentEndpoint(ILogger logger, string endpoint)
         {
             EndpointNotExistsAction(logger, endpoint, null);
         }
